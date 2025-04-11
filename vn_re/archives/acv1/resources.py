@@ -135,7 +135,7 @@ def encrypt_resources(data, flags, file_name, xor_key):
 
 
 def write_entry(input_file_name, output_file, encrypt):
-    file_name = "/".join(input_file_name.split("/")[1:]).encode("cp932")
+    file_name = "/".join(input_file_name.split(os.sep)[1:]).encode("cp932")
     print(str(file_name, encoding="cp932"))
     checksum = crc64(file_name).to_bytes(8, "little")
     xor_key = int.from_bytes(checksum[0:4], "little")
