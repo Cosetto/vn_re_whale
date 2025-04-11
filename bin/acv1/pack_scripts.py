@@ -25,7 +25,7 @@ def init_argparse():
 
 
 def prompt_for_game():
-    with open("script_keys.txt", "r") as script_keys:
+    with open("script_keys.txt", "r", encoding='u8') as script_keys:
         keys = [
             [k.strip() for k in line.split("|")] for line in script_keys.readlines()
         ]
